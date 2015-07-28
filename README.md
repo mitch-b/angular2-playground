@@ -20,3 +20,7 @@ $ python -m SimpleHTTPServer 8080
 
 * https://angular.io/docs/js/latest/quickstart.html
 * https://angular.io/docs/js/latest/guide/displaying-data.html
+
+## Other Things
+* [atom](https://atom.io/)
+    * [atom-typescript](https://atom.io/packages/atom-typescript)
