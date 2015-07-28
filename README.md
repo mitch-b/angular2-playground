@@ -18,6 +18,7 @@ $ tsc --watch -m commonjs -t es5 --emitDecoratorMetadata app.ts
 $ python -m SimpleHTTPServer 8080
 ```
 
+* https://github.com/timjacobi/angular2-education
 * https://angular.io/docs/js/latest/quickstart.html
 * https://angular.io/docs/js/latest/guide/displaying-data.html
 
