@@ -25,7 +25,7 @@ var DisplayContent = (function () {
     DisplayContent = __decorate([
         angular2_1.Component({
             selector: 'display',
-            appInjector: [FriendsService]
+            hostInjector: [FriendsService]
         }),
         angular2_1.View({
             template: "\n    <p>My name: {{myName}}</p>\n    <p>Friends: <span *ng-if=\"names.length > 3\"> (so many!)</span></p>\n    <ul>\n      <li *ng-for=\"#name of names\">\n        {{name}}\n      </li>\n    </ul>\n  ",

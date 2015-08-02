@@ -12,7 +12,7 @@ class FriendsService {
 
 @Component({
   selector: 'display',
-  appInjector: [FriendsService]
+  hostInjector: [FriendsService]
 })
 
 @View({
