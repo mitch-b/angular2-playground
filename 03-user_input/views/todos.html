@@ -1,0 +1,5 @@
+<input #todotext (keyup)="doneTyping($event)">
+<button (click)="addTodo(todotext.value)">Add Todo</button>
+<ul>
+  <li *ng-for="#todo of todoService.todos">{{todo}}</li>
+</ul>

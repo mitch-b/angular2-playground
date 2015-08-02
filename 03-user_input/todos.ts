@@ -2,17 +2,7 @@
 
 import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
 
-// should be separate file
-class ToDoService {
-  public todos: Array<string>;
-  constructor() {
-    this.todos = ["Eat Breakfast", "Walk Dog", "Breathe"];
-  }
-  public addTodo (todo: string) {
-    this.todos.push(todo);
-  }
-}
-// should be separate file
+import {ToDoService} from 'ToDoService';
 
 @Component({
   selector: 'todo-list',
@@ -20,13 +10,7 @@ class ToDoService {
 })
 
 @View({
-  template: `
-    <ul>
-      <li *ng-for="#todo of todoService.todos">{{todo}}</li>
-    </ul>
-    <input #todotext (keyup)="doneTyping($event)">
-    <button (click)="addTodo(todotext.value)">Add Todo</button>
-  `,
+  templateUrl: 'views/todos.html',
   directives: [NgFor]
 })
 

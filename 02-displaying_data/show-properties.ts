@@ -2,13 +2,7 @@
 
 import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 
-class FriendsService {
-  names: Array<string>;
-  constructor() {
-    this.names = ["Alice", "Arav", "Martin", "Shannon", "Ariana", "Kai"];
-  }
-}
-
+import {FriendsService} from 'FriendsService';
 
 @Component({
   selector: 'display',
@@ -16,17 +10,9 @@ class FriendsService {
 })
 
 @View({
-  template: `
-    <p>My name: {{myName}}</p>
-    <p>Friends: <span *ng-if="names.length > 3"> (so many!)</span></p>
-    <ul>
-      <li *ng-for="#name of names">
-        {{name}}
-      </li>
-    </ul>
-  `
-  ,directives: [NgFor, NgIf]
-  })
+  templateUrl: 'views/friends.html',
+  directives: [NgFor, NgIf]
+})
 
 class DisplayContent {
   myName: string;
@@ -37,6 +23,5 @@ class DisplayContent {
     this.names = friendsService.names;
   }
 }
-
 
 bootstrap(DisplayContent);

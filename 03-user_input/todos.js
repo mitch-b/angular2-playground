@@ -11,15 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var ToDoService = (function () {
-    function ToDoService() {
-        this.todos = ["Eat Breakfast", "Walk Dog", "Breathe"];
-    }
-    ToDoService.prototype.addTodo = function (todo) {
-        this.todos.push(todo);
-    };
-    return ToDoService;
-})();
+var ToDoService_1 = require('ToDoService');
 var ToDoList = (function () {
     function ToDoList(todoService) {
         this.todoService = todoService;
@@ -36,13 +28,13 @@ var ToDoList = (function () {
     ToDoList = __decorate([
         angular2_1.Component({
             selector: 'todo-list',
-            hostInjector: [ToDoService]
+            hostInjector: [ToDoService_1.ToDoService]
         }),
         angular2_1.View({
-            template: "\n    <ul>\n      <li *ng-for=\"#todo of todoService.todos\">{{todo}}</li>\n    </ul>\n    <input #todotext (keyup)=\"doneTyping($event)\">\n    <button (click)=\"addTodo(todotext.value)\">Add Todo</button>\n  ",
+            templateUrl: 'views/todos.html',
             directives: [angular2_1.NgFor]
         }), 
-        __metadata('design:paramtypes', [ToDoService])
+        __metadata('design:paramtypes', [ToDoService_1.ToDoService])
     ], ToDoList);
     return ToDoList;
 })();
