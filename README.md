@@ -55,4 +55,4 @@ Use your favorite web server. Example with Python,
 $ python -m SimpleHTTPServer 11337
 ```
 
-Now, just navigate your browser to [localhost:1137](http://localhost:1137/)
+Now, just navigate your browser to [localhost:11337](http://localhost:11337/)
