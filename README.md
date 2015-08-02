@@ -15,6 +15,8 @@ Each example in this repository is built from these sources:
     * `02-displaying_data`
 * https://angular.io/docs/js/latest/guide/user-input.html
     * `03-user_input`
+* https://angular.io/docs/js/latest/guide/making-components.html
+    * `04-making_components`
 
 ## Getting Code
 
