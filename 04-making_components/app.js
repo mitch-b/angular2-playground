@@ -7,25 +7,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var angular2_1 = require('angular2/angular2');
-var child_1 = require('child');
-var ParentComponent = (function () {
-    function ParentComponent() {
-        this.message = "I'm the parent";
-    }
-    ParentComponent = __decorate([
-        angular2_1.Component({
-            selector: 'parent'
-        }),
-        angular2_1.View({
-            templateUrl: 'views/parent.html',
-            directives: [child_1.ChildComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ParentComponent);
-    return ParentComponent;
-})();
-angular2_1.bootstrap(ParentComponent);
+define(["require", "exports", 'angular2/angular2', 'child'], function (require, exports, angular2_1, child_1) {
+    var ParentComponent = (function () {
+        function ParentComponent() {
+            this.message = "I'm the parent";
+        }
+        ParentComponent = __decorate([
+            angular2_1.Component({
+                selector: 'parent'
+            }),
+            angular2_1.View({
+                templateUrl: 'views/parent.html',
+                directives: [child_1.ChildComponent]
+            })
+        ], ParentComponent);
+        return ParentComponent;
+    })();
+    angular2_1.bootstrap(ParentComponent);
+});
+//# sourceMappingURL=app.js.map

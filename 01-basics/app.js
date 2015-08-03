@@ -7,23 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var angular2_1 = require('angular2/angular2');
-var MyAppComponent = (function () {
-    function MyAppComponent() {
-        this.name = 'Alice';
-    }
-    MyAppComponent = __decorate([
-        angular2_1.Component({
-            selector: 'my-app'
-        }),
-        angular2_1.View({
-            template: '<h2>Hello, {{name}}!</h2>'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], MyAppComponent);
-    return MyAppComponent;
-})();
-angular2_1.bootstrap(MyAppComponent);
+define(["require", "exports", 'angular2/angular2'], function (require, exports, angular2_1) {
+    var MyAppComponent = (function () {
+        function MyAppComponent() {
+            this.name = 'Alice';
+        }
+        MyAppComponent = __decorate([
+            angular2_1.Component({
+                selector: 'my-app'
+            }),
+            angular2_1.View({
+                template: '<h2>Hello, {{name}}!</h2>'
+            })
+        ], MyAppComponent);
+        return MyAppComponent;
+    })();
+    angular2_1.bootstrap(MyAppComponent);
+});
+//# sourceMappingURL=app.js.map

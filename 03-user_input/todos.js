@@ -7,35 +7,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
         case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
     }
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var angular2_1 = require('angular2/angular2');
-var ToDoService_1 = require('ToDoService');
-var ToDoList = (function () {
-    function ToDoList(todoService) {
-        this.todoService = todoService;
-    }
-    ToDoList.prototype.addTodo = function (todo) {
-        this.todoService.addTodo(todo);
-    };
-    ToDoList.prototype.doneTyping = function ($event) {
-        if ($event.which === 13) {
-            this.addTodo($event.target.value);
-            $event.target.value = null;
+define(["require", "exports", 'angular2/angular2', 'ToDoService'], function (require, exports, angular2_1, ToDoService_1) {
+    var ToDoList = (function () {
+        function ToDoList(todoService) {
+            this.todoService = todoService;
         }
-    };
-    ToDoList = __decorate([
-        angular2_1.Component({
-            selector: 'todo-list',
-            hostInjector: [ToDoService_1.ToDoService]
-        }),
-        angular2_1.View({
-            templateUrl: 'views/todos.html',
-            directives: [angular2_1.NgFor]
-        }), 
-        __metadata('design:paramtypes', [ToDoService_1.ToDoService])
-    ], ToDoList);
-    return ToDoList;
-})();
-angular2_1.bootstrap(ToDoList);
+        ToDoList.prototype.addTodo = function (todo) {
+            this.todoService.addTodo(todo);
+        };
+        ToDoList.prototype.doneTyping = function ($event) {
+            if ($event.which === 13) {
+                this.addTodo($event.target.value);
+                $event.target.value = null;
+            }
+        };
+        ToDoList = __decorate([
+            angular2_1.Component({
+                selector: 'todo-list',
+                hostInjector: [ToDoService_1.ToDoService]
+            }),
+            angular2_1.View({
+                templateUrl: 'views/todos.html',
+                directives: [angular2_1.NgFor]
+            })
+        ], ToDoList);
+        return ToDoList;
+    })();
+    angular2_1.bootstrap(ToDoList);
+});
+//# sourceMappingURL=todos.js.map
