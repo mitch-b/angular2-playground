@@ -31,7 +31,7 @@ $ cd angular2-playground/
 
 I've found Atom to be fairly simple to use. With the atom-typescript package, it will compile the `.ts` files to `.js` every time you save your file. Convenient.
 
-* [Atom](https://atom.io/)
+* [Download Atom](https://atom.io/) (Windows/Linux/Mac)
     * [atom-typescript](https://atom.io/packages/atom-typescript)
 
 ### Option 2: Run from Terminal
@@ -47,6 +47,17 @@ $ npm install -g typescript@^1.5.0-beta
 # compile .ts and watch for changes
 $ tsc --watch -m commonjs -t es5 --emitDecoratorMetadata app.ts
 ```
+
+### Option 3: Visual Studio Code
+
+I also tested these samples using Visual Studio Code. Seems to work pretty straightforward and was built to handle TypeScript.
+
+* [Download Visual Studio Code](https://code.visualstudio.com/) (Windows/Linux/Mac)
+
+1. Open this repo folder in VS Code
+1. `Ctrl+Shift+B` (Windows/Linux), &#8984;`+Shift+B` (Mac) will trigger build using `tsc` settings found in `.settings/tasks.json` 
+
+>See [TypeScript features in VS Code on MSDN](http://blogs.msdn.com/b/typescript/archive/2015/04/30/using-typescript-in-visual-studio-code.aspx)
 
 ## Running
 
