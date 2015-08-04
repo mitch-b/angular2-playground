@@ -27,6 +27,29 @@ $ cd angular2-playground/
 
 ## Environment Setup
 
+(this is assuming node and npm are already installed)
+
+```bash
+# install toolsets and dependencies
+$ npm i -g tsd@latest
+$ tsd install angular2 es6-promise rx rx-lite
+$ npm i -g typescript@^1.5.0-beta
+```
+
+### Option 0: Use terminal
+
+#### Mac/Linux
+
+```bash
+$ tsc --watch
+```
+
+#### Windows
+
+```cmd
+> tsc.cmd -w
+```
+
 ### Option 1: Use Atom + `atom-typescript`
 
 I've found Atom to be fairly simple to use. With the atom-typescript package, it will compile the `.ts` files to `.js` every time you save your file. Convenient.
@@ -34,30 +57,39 @@ I've found Atom to be fairly simple to use. With the atom-typescript package, it
 * [Download Atom](https://atom.io/) (Windows/Linux/Mac)
     * [atom-typescript](https://atom.io/packages/atom-typescript)
 
-### Option 2: Run from Terminal
-
-If you don't want Atom doing stuff behind the scenes, you can manually run `tsc` to compile the TypeScript to JavaScript.
-
-```bash
-# install toolsets and dependencies
-$ npm install -g tsd@latest
-$ tsd install angular2 es6-promise rx rx-lite
-$ npm install -g typescript@^1.5.0-beta
-
-# compile .ts and watch for changes
-$ tsc --watch -m commonjs -t es5 --emitDecoratorMetadata app.ts
-```
-
-### Option 3: Visual Studio Code
+### Option 2: Visual Studio Code
 
 I also tested these samples using Visual Studio Code. Seems to work pretty straightforward and was built to handle TypeScript.
 
 * [Download Visual Studio Code](https://code.visualstudio.com/) (Windows/Linux/Mac)
 
 1. Open this repo folder in VS Code
-1. `Ctrl+Shift+B` (Windows/Linux), &#8984;`+Shift+B` (Mac) will trigger build using `tsc` settings found in `.settings/tasks.json` 
+1. **Ctrl+Shift+B** (Windows/Linux), **&#8984;+Shift+B** (Mac) will trigger build using `tsc` settings found in `.settings/tasks.json` 
 
 >See [TypeScript features in VS Code on MSDN](http://blogs.msdn.com/b/typescript/archive/2015/04/30/using-typescript-in-visual-studio-code.aspx)
+
+#### Ubuntu Notes
+
+When trying this on a clean installation of Ubuntu 15.04, there's may be small changes you'll want to make. 
+
+Depending on how you've got node installed, you either have or don't have the `node` executable alias. 
+Make sure `node` executable can be found, since our VSCode build task expects the name `node`. 
+Installing node from apt-get doesn't seem to include this.
+
+Running **Ctrl+Shift+B** and inspecting the Output window, I saw this message: `/usr/bin/env node No such file or directory`.
+
+So, let's fix the missing node link. 
+
+```bash
+$ which node
+# if you see an entry returned, you don't have this error. Go to VSCode and enjoy!
+
+# ... if nothing, try nodejs
+$ which nodejs
+
+# if nodejs is returned, (assuming /usr/bin/nodejs) link it to node
+$ ln -s /usr/bin/nodejs /usr/bin/node
+```
 
 ## Running
 
